@@ -5,20 +5,48 @@ module.exports = {
 	entry: [
 		'webpack-dev-server/client?http://localhost:3008',
 		'webpack/hot/only-dev-server',
-		'./app/index.js'
+		'babel-polyfill',
+		'./src/index.jsx'
 	],
 
-	output:{
+	output: {
 		filename: 'bundle.js',
-		path:path.resolve(__dirname,'dist')
+		path: path.resolve(__dirname, 'dist')
 	},
 
-	plugins:[
-		new webpack.HotModuleReplacementPlugin()
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV':'"production"'
+		})
 	],
+
+	module: {
+		rules: [
+			{
+				test: "\.html$",
+				loader: "html-loader",
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modues/,
+				loader: 'babel-loader',
+				options:{
+					presets: ['react'],
+					cacheDirectory:true
+				}
+			}
+		]
+	},
+
+	resolve: {
+		extensions: ['.js', '.jsx']
+	},
+
+	devtool: "sourc-map",
 
 	devServer: {
 		hot: true,
-		contentBase: './app'
+		contentBase: './dist'
 	}
 }
