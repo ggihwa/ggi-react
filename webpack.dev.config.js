@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
 	entry: [
+		'webpack/hot/only-dev-server',
 		'babel-polyfill',
 		'./src/index.jsx'
 	],
@@ -13,9 +14,7 @@ module.exports = {
 	},
 
 	plugins: [
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV':'"production"'
-		})
+		new webpack.HotModuleReplacementPlugin()
 	],
 
 	module: {
@@ -32,11 +31,29 @@ module.exports = {
 					presets: ['react'],
 					cacheDirectory:true
 				}
+			},
+			{
+				test: /\.(css|scss)$/,
+				exclude: /node_modues/,
+				use: [{
+					loader: "style-loader" // creates style nodes from JS strings
+				}, {
+					loader: "css-loader" // translates CSS into CommonJS
+				}, {
+					loader: "sass-loader" // compiles Sass to CSS
+				}]
 			}
 		]
 	},
 
 	resolve: {
 		extensions: ['.js', '.jsx']
+	},
+
+	devtool: "cheap-eval-source-map",
+
+	devServer: {
+		hot: true,
+		contentBase: './dist'
 	}
 }
