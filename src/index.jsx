@@ -1,8 +1,9 @@
 import React from 'react'
 import {render} from 'react-dom'
-import App from './continers/App';
+import {BrowserRouter as Router} from 'react-router-dom'
+import routes from './routes'
 
 render(
-	<App />,
+	<Router>{routes}</Router>,
 	document.getElementById('root')
-);
+)
