@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Title from '../components/title'
+import Footer from '../components/footer'
 
 class App extends Component {
 	constructor(){
@@ -19,6 +20,7 @@ class App extends Component {
 					   onHandleSelectTitle={this.handleSelectTitle.bind(this)}>
 				</Title>
 				<div>test1</div>
+				<Footer></Footer>
 			</div>
 		)
 	}
