@@ -8,12 +8,8 @@ const history = createBrowserHistory()
 
 import routes from './routes'
 
-
-//store
-import {createStore} from 'redux'
+//redux
 import {Provider} from 'react-redux'
-import reducers from './reducers'
-const store = createStore(reducers)
 
 //
 import * as actions from './actions'
