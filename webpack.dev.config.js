@@ -28,7 +28,7 @@ module.exports = {
 				exclude: /node_modues/,
 				loader: 'babel-loader',
 				options:{
-					presets: ['react'],
+					presets: ['react','es2015','stage-0'],
 					cacheDirectory:true
 				}
 			},
