@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 
 import {BrowserRouter as Router, Link} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'

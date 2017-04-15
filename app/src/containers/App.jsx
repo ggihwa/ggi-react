@@ -1,23 +1,23 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Title from '../components/title'
 import Footer from '../components/footer'
 
 class App extends Component {
-	constructor(){
+	constructor() {
 		super();
-		this.state = {title : 'TEST'}
+		this.state = {title: 'TEST'}
 	}
 
-	handleSelectTitle(title){
+	handleSelectTitle(title) {
 		console.log(this)
-		this.setState({title:'click123'+title})
+		this.setState({title: 'click123' + title})
 	}
 
-	render(){
+	render() {
 		return (
 			<div>
 				<Title title={this.state.title}
-					   onHandleSelectTitle={this.handleSelectTitle.bind(this)}>
+				       onHandleSelectTitle={this.handleSelectTitle.bind(this)}>
 				</Title>
 				<div>test1</div>
 				<Footer></Footer>
