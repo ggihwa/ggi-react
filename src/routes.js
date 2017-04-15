@@ -1,7 +1,8 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import App from './containers/App'
 import List from './containers/List'
+
 
 export default (
 	<div>
