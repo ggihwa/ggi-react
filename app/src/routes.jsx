@@ -6,8 +6,9 @@ import ReduxExample from './containers/ReduxExample'
 
 const routes = (
 	<div>
-		<Route exact path="/" component={ReduxExample} />
+		<Route exact path="/" component={App} />
 		<Route path="/list" component={List} />
+		<Route path="/redux" component={ReduxExample} />
 	</div>
 )
 

@@ -34,6 +34,7 @@ render(
 			<ul>
 				<li><Link to="/">Home</Link></li>
 				<li><Link to="/list">List</Link></li>
+				<li><Link to="/redux">Redux</Link></li>
 			</ul>
 			{routes}
 		</div>
