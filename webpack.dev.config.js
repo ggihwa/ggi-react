@@ -54,6 +54,7 @@ module.exports = {
 
 	devServer: {
 		hot: true,
-		contentBase: './dist'
+		contentBase: './dist',
+		historyApiFallback: true //url로 바로접근 가능하게 함
 	}
 }
