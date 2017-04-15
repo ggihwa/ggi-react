@@ -4,10 +4,11 @@ import App from './containers/App'
 import List from './containers/List'
 import ReduxExample from './containers/ReduxExample'
 
-
-export default (
+const routes = (
 	<div>
 		<Route exact path="/" component={ReduxExample} />
 		<Route path="/list" component={List} />
 	</div>
 )
+
+export default routes
