@@ -1,3 +1,7 @@
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 export const SET_COLOR = 'SET_COLOR'
+
+export const REQUEST_ARTICLES = 'REQUEST_ARTICLES'
+export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES'
+export const CANCEL_QUERY = 'CANCEL_QUERY'

@@ -1,23 +1,24 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { createBrowserHistory } from 'history'
+import { createStore, applyMiddleware, compose } from 'redux'
+import { Provider } from 'react-redux'
+import { createEpicMiddleware } from 'redux-observable'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
-//route
-import {BrowserRouter as Router, Link} from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
+import reducers from './reducers'
+import routes from './routes'
+import epics from './epics'
+
+const middleware = createEpicMiddleware(epics)
 const history = createBrowserHistory()
 
-import routes from './routes'
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(
+		reducers,
+		composeEnhancers(applyMiddleware(middleware))
+)
 
-
-//store
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
-import reducers from './reducers'
-const store = createStore(reducers)
-
-//
-import * as actions from './actions'
-//
 //console.log(store.getState())
 //const unsubscribe = store.subscribe(()=> console.log(store.getState()))
 //store.dispatch(actions.increment())
