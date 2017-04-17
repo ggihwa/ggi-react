@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { requestArticles } from '../actions'
+import { requestArticles } from './articles._actions'
 
-import Home from '../components/Home'
+import Home from '../common/Home'
 
 class List extends React.Component {
 	componentDidMount() {

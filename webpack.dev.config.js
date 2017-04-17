@@ -5,7 +5,7 @@ module.exports = {
 	entry: [
 		'webpack/hot/only-dev-server',
 		'babel-polyfill',
-		'./app/src/index.jsx'
+		'./app/src/Index.jsx'
 	],
 
 	output: {
@@ -54,7 +54,7 @@ module.exports = {
 
 	devServer: {
 		hot: true,
-		contentBase: './app/dist',
+		contentBase: './dist',
 		historyApiFallback: true //url로 바로접근 가능하게 함
 	}
 }

@@ -6,12 +6,12 @@ const Home = props => (
 	</div>
 )
 
-const renderItem = ({ title }) => {
+const renderItem = ({ title },index) => {
 	const style = {
 		fontSize: '1.5em',
 		margin: '5px 0px',
 	}
-	return <li style={style}>{title}</li>
+	return <li style={style} key={index}>{title}</li>
 }
 
 export default Home

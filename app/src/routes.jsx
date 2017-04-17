@@ -1,16 +1,16 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
-import App from './containers/App'
-import List from './containers/List'
-import Pingpong from './containers/Pingpong'
-import ReduxExample from './containers/ReduxExample'
+import Pingpong from './pingpong/Pingpong'
+import Index from './main/Index'
+import ArticleList from './articles/articles.page.list'
+import Counter from './counter/Counter'
 
 const routes = (
 	<div>
-		<Route exact path="/" component={App} />
-		<Route path="/list" component={List} />
+		<Route exact path="/" component={Index} />
+		<Route path="/list" component={ArticleList} />
 		<Route path="/pingpong" component={Pingpong} />
-		<Route path="/redux" component={ReduxExample} />
+		<Route path="/counter" component={Counter} />
 	</div>
 )
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {ping} from '../redux/ping'
+import { bindActionCreators } from 'redux'
+import * as actions from './PingpongReducer'
 
 class Pingpong extends Component {
 	constructor(){
@@ -12,21 +13,21 @@ class Pingpong extends Component {
 		return (
 			<div>
 				isPinging: {ping.toString()}
-				<button onClick={this.props.handlePing}>click</button>
+				<button onClick={this.props.ping}>click</button>
 			</div>
 		)
 	}
 }
 
 const mapStateToProps = (state) => {
-	return {isPinging : state.ping.isPinging}
+	return {isPinging : state.pingpong.isPinging}
 }
 
 const mapDispatchToProps = (dispatch) =>{
-	//return bindActionCreators(actions, dispatch)
-	return{
-		handlePing: () => {dispatch(ping())}
-	}
+	return bindActionCreators(actions, dispatch)
+	// return{
+	// 	handlePing: () => {dispatch(ping())}
+	// }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pingpong)

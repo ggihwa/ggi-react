@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
 	entry: [
 		'babel-polyfill',
-		'./src/index.jsx'
+		'./src/reducers.jsx'
 	],
 
 	output: {

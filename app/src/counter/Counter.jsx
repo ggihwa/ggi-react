@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import Control from '../components/control'
-import Value from '../components/value'
+import Control from './control'
+import Value from './value'
 import {connect} from 'react-redux'
-import *  as actions from '../actions'
+import *  as actions from './_actions'
 
-class ReduxExample extends Component {
+class Articles extends Component {
 	constructor(){
 		super()
 		this.setRandomColor = this.setRandomColor.bind(this)
@@ -52,4 +52,4 @@ const mapDispatchToProps = (dispatch) =>{
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReduxExample)
+export default connect(mapStateToProps, mapDispatchToProps)(Articles)

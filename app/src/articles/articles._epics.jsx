@@ -1,10 +1,9 @@
 import { ajax } from 'rxjs/observable/dom/ajax'
 import 'rxjs'
-import { receiveArticles } from '../actions'
-import { REQUEST_ARTICLES } from '../actions/ActionTypes'
+import { receiveArticles, types } from './articles._actions'
 
 const rootEpic = action$ =>
-	action$.ofType('REQUEST_ARTICLES')
+	action$.ofType(types.REQUEST_ARTICLES)
 		.debounceTime(5000)
 		.mergeMap(action =>
 			ajax({

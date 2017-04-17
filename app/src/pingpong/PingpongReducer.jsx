@@ -1,5 +1,4 @@
-export const PING = 'PING'
-export const PONG = 'PONG'
+import * as types from './PingpongActions'
 
 const initialState = {
 	isPinging : false
@@ -7,9 +6,9 @@ const initialState = {
 
 export default function reducer (state=initialState, action={}){
 	switch(action.type){
-		case PING:
+		case types.PING:
 			return {...state, isPinging:true }
-		case PONG:
+		case types.PONG:
 			return {...state, isPinging:false }
 		default:
 			return state
@@ -18,12 +17,12 @@ export default function reducer (state=initialState, action={}){
 
 export function ping(){
 	return {
-		type: PING
+		type: types.PING
 	}
 }
 
 export function pong(){
 	return {
-		type: PONG
+		type: types.PONG
 	}
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Title from '../components/title'
-import Footer from '../components/footer'
+import Title from '../common/title'
+import Footer from '../common/footer'
 
 class App extends Component {
 	constructor() {
