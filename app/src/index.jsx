@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import reducers from './reducers'
 import routes from './routes'
-import epics from './epics'
+import epics from './epics/ping'
 
 const middleware = createEpicMiddleware(epics)
 const history = createBrowserHistory()
@@ -35,6 +35,7 @@ render(
 			<ul>
 				<li><Link to="/">Home</Link></li>
 				<li><Link to="/list">List</Link></li>
+				<li><Link to="/pingpong">PingPong</Link></li>
 				<li><Link to="/redux">Redux</Link></li>
 			</ul>
 			{routes}

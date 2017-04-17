@@ -12,7 +12,7 @@ export default function reducer (state=initialState, action={}){
 		case PONG:
 			return {...state, isPinging:false }
 		default:
-			return {state}
+			return state
 	}
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {ping, pong} from '../redux/ping'
+import {ping} from '../redux/ping'
 
 class Pingpong extends Component {
 	constructor(){
@@ -11,7 +11,7 @@ class Pingpong extends Component {
 		const ping = this.props.isPinging;
 		return (
 			<div>
-				isPinging: ${ping.toString()}
+				isPinging: {ping.toString()}
 				<button onClick={this.props.handlePing}>click</button>
 			</div>
 		)
@@ -19,9 +19,7 @@ class Pingpong extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return {
-		isPinging: state.ping.isPinging
-	}
+	return {isPinging : state.ping.isPinging}
 }
 
 const mapDispatchToProps = (dispatch) =>{
